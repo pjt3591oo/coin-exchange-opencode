@@ -51,9 +51,11 @@ Production-grade cryptocurrency exchange with real-time orderbook, matching engi
 
 - **Real-time Orderbook**: WebSocket streaming with snapshot + delta updates
 - **High-Performance Matching Engine**: Go-based, single-threaded, price-time priority
-- **Candlestick Charts**: TradingView Lightweight Charts with multiple timeframes
-- **JWT Authentication**: Secure user registration and login
+- **Candlestick Charts**: TradingView Lightweight Charts with real-time updates
+- **JWT Authentication**: Secure user registration and login with session persistence
 - **Mock Trading**: Simulation mode with initial balances
+- **Quick Order Entry**: Click orderbook row to auto-fill order form
+- **Open Orders Management**: View and cancel pending orders
 
 ## Tech Stack
 
@@ -122,7 +124,7 @@ npm run dev:web
 
 ### 5. Access the Exchange
 
-- **Web UI**: http://localhost:3000
+- **Web UI**: http://localhost:3002
 - **API**: http://localhost:3000/api/v1
 - **WebSocket**: ws://localhost:3001
 - **Kafka UI**: http://localhost:8080
@@ -178,11 +180,11 @@ ws.send(JSON.stringify({
 ## Initial Balances (Mock Trading)
 
 New users receive:
-- 100,000 USDT
-- 1 BTC
-- 10 ETH
-- 100 SOL
-- 10,000 XRP
+- 1,000,000 USDT
+- 10 BTC
+- 100 ETH
+- 1,000 SOL
+- 100,000 XRP
 
 ## Project Structure
 
