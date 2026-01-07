@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm-cache/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Go
+matching-engine/bin/
+matching-engine/tmp/
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test
+coverage/
+.nyc_output/
+
+# Docker
+docker/data/
+
+# Turbo
+.turbo/

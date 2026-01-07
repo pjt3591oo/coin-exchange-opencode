@@ -1,0 +1,32 @@
+{
+  "name": "opencode-exchange",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-grade cryptocurrency exchange",
+  "packageManager": "npm@10.2.0",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "web"
+  ],
+  "scripts": {
+    "build": "npm run build:packages && npm run build:services",
+    "build:packages": "npm run build -w @exchange/types && npm run build -w @exchange/errors && npm run build -w @exchange/logger && npm run build -w @exchange/config && npm run build -w @exchange/redis && npm run build -w @exchange/kafka",
+    "build:services": "npm run build -w @exchange/api-gateway && npm run build -w @exchange/trade-processor && npm run build -w @exchange/ws-gateway && npm run build -w @exchange/ohlcv-aggregator",
+    "dev:api": "npm run dev -w @exchange/api-gateway",
+    "dev:trade": "npm run dev -w @exchange/trade-processor",
+    "dev:ws": "npm run dev -w @exchange/ws-gateway",
+    "dev:ohlcv": "npm run dev -w @exchange/ohlcv-aggregator",
+    "dev:web": "npm run dev -w @exchange/web",
+    "docker:up": "docker-compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f docker/docker-compose.yml down",
+    "docker:logs": "docker-compose -f docker/docker-compose.yml logs -f"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

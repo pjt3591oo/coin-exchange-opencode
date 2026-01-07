@@ -1,0 +1,27 @@
+{
+  "name": "@exchange/ohlcv-aggregator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@exchange/config": "*",
+    "@exchange/kafka": "*",
+    "@exchange/logger": "*",
+    "@exchange/redis": "*",
+    "@exchange/types": "*",
+    "decimal.js": "^10.4.3",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.9",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.0"
+  }
+}
